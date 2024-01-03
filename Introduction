@@ -1,0 +1,93 @@
+	1. SQL, Structed query language is a powerful language used for managing and manipulating 
+  relational databases (where data is stored into table with rows and columns)
+	
+  2. It allows user to perform operations like retrieving, inserting, updating and deleting data
+	
+  3. It is a declarative language which means you tell database what to do and not how to do. The database engine optimizes the execution of your query
+	
+  4. Basic SQL commands -
+		Category of SQL 
+			i. DDL (Data Definition Language): Define the structure of the database. 
+        Creating and modifying tables, indexes and relationships. CREATE, ALTER and DROP
+				1) CREATE : use this to create various database objects. If you ever need anything 
+        ( I mean only database objects like tables, views, indexes, procedures etc which we will talk about in detail later) ask database to create 
+				Syntax for creating table
+				CREATE TABLE table_name(
+				Columnname1 datatype constraints,
+				Columnname2 datatype constraints,
+				……
+				);
+				
+        2) ALTER : use this to make any changes to existing database objects
+				Few common alterations are :
+				
+				Adding column
+				ALTER TABLE table_name
+				ADD column_name datatype constraints;
+				
+				Modifying column's data type
+				ALTER TABLE table_name
+				ALTER COLUMN column_name data_type;
+				
+				Renaming column
+				ALTER TABLE table_name
+				RENAME COLUMN old_column_name TO new_column_name;
+				
+				Dropping column
+				ALTER TABLE table_name
+				DROP COLUMN column_name;
+				
+				Renaming a table
+				ALTER TABLE old_table_name
+				RENAME as new_table_name
+				
+				Dropping constraint 
+				ALTER TABLE table_name
+				DROP constraint constraint_name;
+				
+				Adding constraint
+				ALTER TABLE table_name
+				ADD CONSTRAINT constraint_name constraint_definition;
+				
+				3) DROP : To remove existing database objects like tables, indexes, views, or even the entire databases. 
+         This is powerful command that can remove objects permanently from database
+				
+				DROP TABLE table_name;
+				DROP INDEX index_name;
+				
+			ii. DML (Data Manipulation Language) : modify data in database. INSERT, UPDATE AND DELETE 
+				1) INSERT : you want some data record stored in table that you created. You just tell database to insert required data in table you wish with this command
+				INSERT INTO table_name (column1, column2,…..)
+				VALUES (value1, value2,….)
+				2) UPDATE : There's some change you need to perform on the data that's already present. Ask to do the same with this command
+				 UPDATE table_name SET column_name = Value;
+				3) DELETE : You don't want some data (or all) in your table then use
+				
+				DELETE FROM table_name (just this in case of all data)
+				WHERE CONDITION (in case delete is conditional)
+				
+			iii. DQL (Data Query Language) : Retrieve data, SELECT
+			
+			iv. DCL (Data Control Language) : Control access to database, granting or revoking privileges to users.
+			GRANT, REVOKE
+				1) GRANT : you can grant privilege like SELECT, INSERT, UPDATE, DELETE and more, to users on the database objects that you've created. 
+				GRANT SELECT, INSERT on table_name TO user_name;
+				2) REVOKE : you can take away the privilege you granted to user using 
+				REVOKE INSERT on table_name FROM user_name;
+				
+			v. TCL (Transaction Control Language) : Set of Commands allow you to manage transactions within a database. 
+         (Transaction is a set of commands like  INSERTS, UPDATES and DELETES that are treated as a single unit) 
+         COMMIT, ROLLBACK, SAVEPOINT
+				1) COMMIT : When you are done with changes and sure you want to stick to the changes then you issue COMMIT to database. 
+          Remember once you COMMIT there will be permanent changes done in database. There's no going back.
+				2) ROLLBACK : If something goes wrong within transaction instead of panicking use ROLLBACK, 
+            This undoes all changes that was made in current transaction and database returns to state before transaction started. Like it never happened.
+				3) SAVEPOINT : It's like a backup/bookmark point. Within transaction you mark SAVEPOINT where you know whatever happened 
+          so far is good and If anything goes wrong further you just wish to come back to this place rather start from scratch.
+				  When something goes wrong use "ROLLBACK TO SAVEPOINT" and from there take it further as you wish.
+				
+				
+				
+				
+	
+	
